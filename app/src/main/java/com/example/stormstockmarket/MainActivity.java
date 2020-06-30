@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     double flu1, flu2, flu3, flu4, flu5; // 등락률
-    boolean sign1, sign2, sign3, sign4, sign5; // 등락률 부호
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,42 +88,27 @@ public class MainActivity extends AppCompatActivity {
                     파산은행이전가.setText(array5[1]+"");
 
                     if(hasNoZero(array1)){
-                        if(array1[0]>array1[1]){
-                            sign1 = true;
-                        }else{sign1 = false;}
-                        flu1 = Math.abs((array1[0]-array1[1]))/array1[1]*100;
+                        flu1 = array1[0]-array1[1];
                     }
                     else{flu1 = 0;}
 
                     if(hasNoZero(array2)){
-                        if(array2[0]>array2[1]){
-                            sign2 = true;
-                        }else{sign2 = false;}
-                        flu2 = Math.abs((array2[0]-array2[1]))/array2[1]*100;
+                        flu2 = array2[0]-array2[1];
                     }
                     else{flu2 = 0;}
 
                     if(hasNoZero(array3)){
-                        if(array3[0]>array3[1]){
-                            sign3 = true;
-                        }else{sign3 = false;}
-                        flu3 = Math.abs((array3[0]-array3[1]))/array3[1]*100;
+                        flu3 = array3[0]-array3[1];
                     }
                     else{flu3 = 0;}
 
                     if(hasNoZero(array4)){
-                        if(array4[0]>array4[1]){
-                            sign4 = true;
-                        }else{sign4 = false;}
-                        flu4 = Math.abs((array4[0]-array4[1]))/array4[1]*100;
+                        flu4 = array4[0]-array4[1];
                     }
                     else{flu4 = 0;}
 
                     if(hasNoZero(array5)){
-                        if(array5[0]>array5[1]){
-                            sign5 = true;
-                        }else{sign5 = false;}
-                        flu5 = Math.abs((array5[0]-array5[1]))/array5[1]*100;
+                        flu5 = array5[0]-array5[1];
                     }
                     else{flu5 = 0;}
 
@@ -134,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                     final TextView 지진건설등락률 = (TextView) findViewById(R.id.지진건설등락률);
                     final TextView 파산은행등락률 = (TextView) findViewById(R.id.파산은행등락률);
 
-                    if(sign1==true) {
+                    if(flu1>0) {
                         단절통신등락률.setText("+"+flu1+"");
                         단절통신등락률.setTextColor(Color.parseColor("#FF0000"));
                     }
@@ -142,12 +126,12 @@ public class MainActivity extends AppCompatActivity {
                         단절통신등락률.setText(flu1+"");
                         단절통신등락률.setTextColor(Color.parseColor("#000000"));
                     }
-                    if(sign1==false){
-                        단절통신등락률.setText("-"+flu1+"");
+                    if(flu1<0){
+                        단절통신등락률.setText(flu1+"");
                         단절통신등락률.setTextColor(Color.parseColor("#0000FF"));
                     }
 
-                    if(sign2==true) {
+                    if(flu2>0) {
                         사망생명등락률.setText("+"+flu2+"");
                         사망생명등락률.setTextColor(Color.parseColor("#FF0000"));
                     }
@@ -155,12 +139,12 @@ public class MainActivity extends AppCompatActivity {
                         사망생명등락률.setText(flu2+"");
                         사망생명등락률.setTextColor(Color.parseColor("#000000"));
                     }
-                    if(sign2==false){
-                        사망생명등락률.setText("-"+flu2+"");
+                    if(flu2<0){
+                        사망생명등락률.setText(flu2+"");
                         사망생명등락률.setTextColor(Color.parseColor("#0000FF"));
                     }
 
-                    if(sign3==true) {
+                    if(flu3>0) {
                         석기전자등락률.setText("+"+flu3+"");
                         석기전자등락률.setTextColor(Color.parseColor("#FF0000"));
                     }
@@ -168,12 +152,12 @@ public class MainActivity extends AppCompatActivity {
                         석기전자등락률.setText(flu3+"");
                         석기전자등락률.setTextColor(Color.parseColor("#000000"));
                     }
-                    if(sign3==false){
-                        석기전자등락률.setText("-"+flu3+"");
+                    if(flu3<0){
+                        석기전자등락률.setText(flu3+"");
                         석기전자등락률.setTextColor(Color.parseColor("#0000FF"));
                     }
 
-                    if(sign4==true) {
+                    if(flu4>0) {
                         지진건설등락률.setText("+"+flu4+"");
                         지진건설등락률.setTextColor(Color.parseColor("#FF0000"));
                     }
@@ -181,12 +165,12 @@ public class MainActivity extends AppCompatActivity {
                         지진건설등락률.setText(flu4+"");
                         지진건설등락률.setTextColor(Color.parseColor("#000000"));
                     }
-                    if(sign4==false){
-                        지진건설등락률.setText("-"+flu4+"");
+                    if(flu4<0){
+                        지진건설등락률.setText(flu4+"");
                         지진건설등락률.setTextColor(Color.parseColor("#0000FF"));
                     }
 
-                    if(sign5==true) {
+                    if(flu5>0) {
                         파산은행등락률.setText("+"+flu5+"");
                         파산은행등락률.setTextColor(Color.parseColor("#FF0000"));
                     }
@@ -194,8 +178,8 @@ public class MainActivity extends AppCompatActivity {
                         파산은행등락률.setText(flu5+"");
                         파산은행등락률.setTextColor(Color.parseColor("#000000"));
                     }
-                    if(sign5==false){
-                        파산은행등락률.setText("-"+flu5+"");
+                    if(flu5<0){
+                        파산은행등락률.setText(flu5+"");
                         파산은행등락률.setTextColor(Color.parseColor("#0000FF"));
                     }
 
