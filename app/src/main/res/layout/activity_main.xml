@@ -58,6 +58,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="5pt" />
         </TableRow>
+
         // Row 단절통신
         <TableRow
             android:layout_width="match_parent"
@@ -75,14 +76,14 @@
                 android:textColor="#FFFFFF"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/단절통신이전가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="a2"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
@@ -93,21 +94,22 @@
                 android:padding="4pt"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="a3"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/단절통신등락률"
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="a4"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
         </TableRow>
+
         // Row 사망생명
         <TableRow
             android:layout_width="match_parent"
@@ -125,36 +127,37 @@
                 android:textColor="#FFFFFF"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/사망생명이전가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="b2"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/사망생명현재가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="b3"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/사망생명등락률"
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="b4"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
         </TableRow>
+
         // Row 석기전자
         <TableRow
             android:layout_width="match_parent"
@@ -172,36 +175,37 @@
                 android:textColor="#FFFFFF"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/석기전자이전가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="c2"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/석기전자현재가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="c3"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/석기전자등락률"
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="c4"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
         </TableRow>
+
         // Row 지진건설
         <TableRow
             android:layout_width="match_parent"
@@ -219,36 +223,37 @@
                 android:textColor="#FFFFFF"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/지진건설이전가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="d2"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/지진건설현재가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="d3"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/지진건설등락률"
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="d4"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
         </TableRow>
+
         // Row 파산은행
         <TableRow
             android:layout_width="match_parent"
@@ -266,33 +271,33 @@
                 android:textColor="#FFFFFF"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/파산은행이전가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="e2"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/파산은행현재가"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="e3"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
-            <TextView
+            <TextView android:id="@+id/파산은행등락률"
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:padding="4pt"
                 android:gravity="center"
-                android:text="e4"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="5pt" />
         </TableRow>
