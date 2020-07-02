@@ -1,8 +1,10 @@
 package com.example.stormstockmarket;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
@@ -36,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
     // 예수금 및 잔고
     int account = 10000;                // 예수금 (account)
-    int aup1,aup2,aup3,aup4,aup5 = 0;   // 평균단가 (average unit price)
-    int qua1,qua2,qua3,qua4,qua5 = 0;   // 수량 (quantity)
-    int tv1,tv2,tv3,tv4,tv5 = 0;        // 평가금액 (total valuation)
+    int aup1 = 0; int aup2 = 0; int aup3 = 0; int aup4 = 0; int aup5 = 0;   // 평균단가 (average unit price)
+    int qua1 = 0; int qua2 = 0; int qua3 = 0; int qua4 = 0; int qua5 = 0;   // 수량 (quantity)
+    int pm1 = 0; int pm2 = 0; int pm3 = 0; int pm4 = 0; int pm5 = 0;        // 매입금액 (purchase amount)
+    int tv1 = 0; int tv2 = 0; int tv3 = 0; int tv4 = 0; int tv5 = 0;        // 평가금액 (total valuation)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
         final TextView 석기전자수량 = (TextView) findViewById(R.id.석기전자수량);
         final TextView 지진건설수량 = (TextView) findViewById(R.id.지진건설수량);
         final TextView 파산은행수량 = (TextView) findViewById(R.id.파산은행수량);
+
+        final TextView 단절통신매입금액 = (TextView) findViewById(R.id.단절통신매입금액);
+        final TextView 사망생명매입금액 = (TextView) findViewById(R.id.사망생명매입금액);
+        final TextView 석기전자매입금액 = (TextView) findViewById(R.id.석기전자매입금액);
+        final TextView 지진건설매입금액 = (TextView) findViewById(R.id.지진건설매입금액);
+        final TextView 파산은행매입금액 = (TextView) findViewById(R.id.파산은행매입금액);
 
         final TextView 단절통신평가금액 = (TextView) findViewById(R.id.단절통신평가금액);
         final TextView 사망생명평가금액 = (TextView) findViewById(R.id.사망생명평가금액);
@@ -225,6 +234,12 @@ public class MainActivity extends AppCompatActivity {
             public void run(){
                 while(true){
 
+                    tv1 = array1[0]*qua1;
+                    tv2 = array2[0]*qua2;
+                    tv3 = array3[0]*qua3;
+                    tv4 = array4[0]*qua4;
+                    tv5 = array5[0]*qua5;
+
                     단절통신평균단가.setText(aup1+"");
                     사망생명평균단가.setText(aup2+"");
                     석기전자평균단가.setText(aup3+"");
@@ -237,14 +252,71 @@ public class MainActivity extends AppCompatActivity {
                     지진건설수량.setText(qua4+"");
                     파산은행수량.setText(qua5+"");
 
+                    단절통신매입금액.setText(pm1+"");
+                    사망생명매입금액.setText(pm2+"");
+                    석기전자매입금액.setText(pm3+"");
+                    지진건설매입금액.setText(pm4+"");
+                    파산은행매입금액.setText(pm5+"");
+
                     단절통신평가금액.setText(tv1+"");
                     사망생명평가금액.setText(tv2+"");
                     석기전자평가금액.setText(tv3+"");
                     지진건설평가금액.setText(tv4+"");
                     파산은행평가금액.setText(tv5+"");
 
+                    if(tv1>pm1){
+                        단절통신평가금액.setTextColor(Color.parseColor("#FF0000"));
+                    }
+                    if(tv1==pm1){
+                        단절통신평가금액.setTextColor(Color.parseColor("#000000"));
+                    }
+                    if(tv1<pm1){
+                        단절통신평가금액.setTextColor(Color.parseColor("#0000FF"));
+                    }
+
+                    if(tv2>pm2){
+                        사망생명평가금액.setTextColor(Color.parseColor("#FF0000"));
+                    }
+                    if(tv2==pm2){
+                        사망생명평가금액.setTextColor(Color.parseColor("#000000"));
+                    }
+                    if(tv2<pm2){
+                        사망생명평가금액.setTextColor(Color.parseColor("#0000FF"));
+                    }
+
+                    if(tv3>pm3){
+                        석기전자평가금액.setTextColor(Color.parseColor("#FF0000"));
+                    }
+                    if(tv3==pm3){
+                        석기전자평가금액.setTextColor(Color.parseColor("#000000"));
+                    }
+                    if(tv3<pm3){
+                        석기전자평가금액.setTextColor(Color.parseColor("#0000FF"));
+                    }
+
+                    if(tv4>pm4){
+                        지진건설평가금액.setTextColor(Color.parseColor("#FF0000"));
+                    }
+                    if(tv4==pm4){
+                        지진건설평가금액.setTextColor(Color.parseColor("#000000"));
+                    }
+                    if(tv4<pm4){
+                        지진건설평가금액.setTextColor(Color.parseColor("#0000FF"));
+                    }
+
+                    if(tv5>pm5){
+                        파산은행평가금액.setTextColor(Color.parseColor("#FF0000"));
+                    }
+                    if(tv5==pm5){
+                        파산은행평가금액.setTextColor(Color.parseColor("#000000"));
+                    }
+                    if(tv5<pm5){
+                        파산은행평가금액.setTextColor(Color.parseColor("#0000FF"));
+                    }
+
+
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(500);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -260,7 +332,7 @@ public class MainActivity extends AppCompatActivity {
                 while (true){
                     예수금.setText("나의 예수금 : "+account+"");
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(500);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -289,21 +361,221 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("단절통신 매수 주문");
         builder.setMessage("\n현재 가격 : " + array1[0]+"\n\n주문 수량을 아래에 입력하세요.\n");
 
-        final EditText et = new EditText(MainActivity.this);
-        et.setText("");
-        et.setInputType(InputType.TYPE_CLASS_NUMBER);
-        builder.setView(et);
+        final EditText editText = new EditText(MainActivity.this);
+        editText.setText("");
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        builder.setView(editText);
 
         builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int id) {
-                Toast.makeText(getApplicationContext(), "매수 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+            public void onClick(DialogInterface dialog, int which) {
+                String stringQua = editText.getText().toString();
+                int intQua = Integer.parseInt(stringQua);
+                int total = intQua*array1[0];
+
+                if(total>account){
+                    Toast.makeText(getApplicationContext(), "예수금 잔액이 부족합니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account -= total;
+                    qua1 += intQua;
+                    pm1 += total;
+                    aup1 = pm1/qua1;
+
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매수 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
             @Override
-            public void onClick(DialogInterface dialog, int id)
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void onClickHandler2(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("사망생명 매수 주문");
+        builder.setMessage("\n현재 가격 : " + array2[0]+"\n\n주문 수량을 아래에 입력하세요.\n");
+
+        final EditText editText = new EditText(MainActivity.this);
+        editText.setText("");
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        builder.setView(editText);
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String stringQua = editText.getText().toString();
+                int intQua = Integer.parseInt(stringQua);
+                int total = intQua*array2[0];
+
+                if(total>account){
+                    Toast.makeText(getApplicationContext(), "예수금 잔액이 부족합니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account -= total;
+                    qua2 += intQua;
+                    pm2 += total;
+                    aup2 = pm2/qua2;
+
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매수 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void onClickHandler3(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("석기전자 매수 주문");
+        builder.setMessage("\n현재 가격 : " + array3[0]+"\n\n주문 수량을 아래에 입력하세요.\n");
+
+        final EditText editText = new EditText(MainActivity.this);
+        editText.setText("");
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        builder.setView(editText);
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String stringQua = editText.getText().toString();
+                int intQua = Integer.parseInt(stringQua);
+                int total = intQua*array3[0];
+
+                if(total>account){
+                    Toast.makeText(getApplicationContext(), "예수금 잔액이 부족합니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account -= total;
+                    qua3 += intQua;
+                    pm3 += total;
+                    aup3 = pm3/qua3;
+
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매수 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void onClickHandler4(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("지진건설 매수 주문");
+        builder.setMessage("\n현재 가격 : " + array4[0]+"\n\n주문 수량을 아래에 입력하세요.\n");
+
+        final EditText editText = new EditText(MainActivity.this);
+        editText.setText("");
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        builder.setView(editText);
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String stringQua = editText.getText().toString();
+                int intQua = Integer.parseInt(stringQua);
+                int total = intQua*array4[0];
+
+                if(total>account){
+                    Toast.makeText(getApplicationContext(), "예수금 잔액이 부족합니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account -= total;
+                    qua4 += intQua;
+                    pm4 += total;
+                    aup4 = pm4/qua4;
+
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매수 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void onClickHandler5(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("사망생명 매수 주문");
+        builder.setMessage("\n현재 가격 : " + array5[0]+"\n\n주문 수량을 아래에 입력하세요.\n");
+
+        final EditText editText = new EditText(MainActivity.this);
+        editText.setText("");
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        builder.setView(editText);
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String stringQua = editText.getText().toString();
+                int intQua = Integer.parseInt(stringQua);
+                int total = intQua*array5[0];
+
+                if(total>account){
+                    Toast.makeText(getApplicationContext(), "예수금 잔액이 부족합니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account -= total;
+                    qua5 += intQua;
+                    pm5 += total;
+                    aup5 = pm5/qua5;
+
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매수 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
             {
                 Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
             }

@@ -94,7 +94,8 @@
                 android:padding="4pt"
                 android:text="단절통신"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler1" />
 
             <TextView
                 android:id="@+id/단절통신이전가"
@@ -118,8 +119,7 @@
                 android:padding="4pt"
                 android:text=""
                 android:textColor="#000000"
-                android:textSize="5pt"
-                android:onClick="onClickHandler1"/>
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/단절통신등락률"
@@ -148,7 +148,8 @@
                 android:padding="4pt"
                 android:text="사망생명"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler2" />
 
             <TextView
                 android:id="@+id/사망생명이전가"
@@ -198,7 +199,8 @@
                 android:padding="4pt"
                 android:text="석기전자"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler3" />
 
             <TextView
                 android:id="@+id/석기전자이전가"
@@ -248,7 +250,8 @@
                 android:padding="4pt"
                 android:text="지진건설"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler4" />
 
             <TextView
                 android:id="@+id/지진건설이전가"
@@ -298,7 +301,8 @@
                 android:padding="4pt"
                 android:text="파산은행"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler5" />
 
             <TextView
                 android:id="@+id/파산은행이전가"
@@ -343,7 +347,7 @@
                 android:text="나의 잔고"
                 android:background="#555555"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"/>
+                android:textSize="5pt" />
         </TableRow>
 
         <TableRow
@@ -354,7 +358,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text="종목"
@@ -364,7 +368,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text="평균단가"
@@ -374,7 +378,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text="수량"
@@ -384,7 +388,17 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="4pt"
+                android:text="매입금액"
+                android:textColor="#FFFFFF"
+                android:textSize="5pt" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text="평가금액"
@@ -400,7 +414,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:background="#c08000"
                 android:gravity="center"
                 android:padding="4pt"
@@ -412,7 +426,7 @@
                 android:id="@+id/단절통신평균단가"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:background="#FFFFFF"
                 android:gravity="center"
                 android:padding="4pt"
@@ -422,6 +436,18 @@
 
             <TextView
                 android:id="@+id/단절통신수량"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:padding="4pt"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="5pt" />
+
+            <TextView
+                android:id="@+id/단절통신매입금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -436,7 +462,7 @@
                 android:id="@+id/단절통신평가금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:background="#FFFFFF"
                 android:gravity="center"
                 android:padding="4pt"
@@ -453,7 +479,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:background="#504028"
                 android:gravity="center"
                 android:padding="4pt"
@@ -465,7 +491,7 @@
                 android:id="@+id/사망생명평균단가"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text=""
@@ -474,6 +500,17 @@
 
             <TextView
                 android:id="@+id/사망생명수량"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:padding="4pt"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="5pt" />
+
+            <TextView
+                android:id="@+id/사망생명매입금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -487,7 +524,7 @@
                 android:id="@+id/사망생명평가금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text=""
@@ -503,7 +540,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:background="#003030"
                 android:gravity="center"
                 android:padding="4pt"
@@ -515,7 +552,7 @@
                 android:id="@+id/석기전자평균단가"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text=""
@@ -524,6 +561,17 @@
 
             <TextView
                 android:id="@+id/석기전자수량"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:padding="4pt"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="5pt" />
+
+            <TextView
+                android:id="@+id/석기전자매입금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -537,7 +585,7 @@
                 android:id="@+id/석기전자평가금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text=""
@@ -553,7 +601,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:background="#308000"
                 android:gravity="center"
                 android:padding="4pt"
@@ -565,7 +613,7 @@
                 android:id="@+id/지진건설평균단가"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text=""
@@ -574,6 +622,17 @@
 
             <TextView
                 android:id="@+id/지진건설수량"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:padding="4pt"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="5pt" />
+
+            <TextView
+                android:id="@+id/지진건설매입금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -587,7 +646,7 @@
                 android:id="@+id/지진건설평가금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text=""
@@ -603,7 +662,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:background="#c83000"
                 android:gravity="center"
                 android:padding="4pt"
@@ -615,7 +674,7 @@
                 android:id="@+id/파산은행평균단가"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text=""
@@ -624,6 +683,17 @@
 
             <TextView
                 android:id="@+id/파산은행수량"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:padding="4pt"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="5pt" />
+
+            <TextView
+                android:id="@+id/파산은행매입금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -637,7 +707,7 @@
                 android:id="@+id/파산은행평가금액"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text=""
@@ -646,8 +716,6 @@
         </TableRow>
 
     </TableLayout>
-
-
 
     <TextView
         android:id="@+id/예수금"
