@@ -420,7 +420,8 @@
                 android:padding="4pt"
                 android:text="단절통신"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler6" />
 
             <TextView
                 android:id="@+id/단절통신평균단가"
@@ -485,7 +486,8 @@
                 android:padding="4pt"
                 android:text="사망생명"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler7" />
 
             <TextView
                 android:id="@+id/사망생명평균단가"
@@ -546,7 +548,8 @@
                 android:padding="4pt"
                 android:text="석기전자"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler8" />
 
             <TextView
                 android:id="@+id/석기전자평균단가"
@@ -607,7 +610,8 @@
                 android:padding="4pt"
                 android:text="지진건설"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler9" />
 
             <TextView
                 android:id="@+id/지진건설평균단가"
@@ -668,7 +672,8 @@
                 android:padding="4pt"
                 android:text="파산은행"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler10" />
 
             <TextView
                 android:id="@+id/파산은행평균단가"

@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
     double flu1, flu2, flu3, flu4, flu5; // 등락률
 
     // 예수금 및 잔고
-    int account = 10000;                // 예수금 (account)
-    int aup1 = 0; int aup2 = 0; int aup3 = 0; int aup4 = 0; int aup5 = 0;   // 평균단가 (average unit price)
-    int qua1 = 0; int qua2 = 0; int qua3 = 0; int qua4 = 0; int qua5 = 0;   // 수량 (quantity)
-    int pm1 = 0; int pm2 = 0; int pm3 = 0; int pm4 = 0; int pm5 = 0;        // 매입금액 (purchase amount)
-    int tv1 = 0; int tv2 = 0; int tv3 = 0; int tv4 = 0; int tv5 = 0;        // 평가금액 (total valuation)
+    int account = 10000;                                                        // 예수금 (account)
+    int aup1 = 0; int aup2 = 0; int aup3 = 0; int aup4 = 0; int aup5 = 0;       // 평균단가 (average unit price)
+    int qua1 = 0; int qua2 = 0; int qua3 = 0; int qua4 = 0; int qua5 = 0;       // 수량 (quantity)
+    int pm1 = 0; int pm2 = 0; int pm3 = 0; int pm4 = 0; int pm5 = 0;            // 매입금액 (purchase amount)
+    int tv1 = 0; int tv2 = 0; int tv3 = 0; int tv4 = 0; int tv5 = 0;            // 평가금액 (total valuation)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -585,5 +585,185 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    // 매도 주문
+    public void onClickHandler6(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("단절통신 매도 주문");
+        builder.setMessage("\n매도하시겠습니까?\n");
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(qua1==0){
+                    Toast.makeText(getApplicationContext(), "주문 가능 수량이 존재하지 않습니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account += tv1;
+                    aup1 = 0;
+                    qua1 = 0;
+                    pm1 = 0;
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매도 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void onClickHandler7(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("사망생명 매도 주문");
+        builder.setMessage("\n매도하시겠습니까?\n");
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(qua2==0){
+                    Toast.makeText(getApplicationContext(), "주문 가능 수량이 존재하지 않습니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account += tv2;
+                    aup2 = 0;
+                    qua2 = 0;
+                    pm2 = 0;
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매도 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void onClickHandler8(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("석기전자 매도 주문");
+        builder.setMessage("\n매도하시겠습니까?\n");
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(qua3==0){
+                    Toast.makeText(getApplicationContext(), "주문 가능 수량이 존재하지 않습니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account += tv3;
+                    aup3 = 0;
+                    qua3 = 0;
+                    pm3 = 0;
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매도 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void onClickHandler9(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("지진건설 매도 주문");
+        builder.setMessage("\n매도하시겠습니까?\n");
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(qua4==0){
+                    Toast.makeText(getApplicationContext(), "주문 가능 수량이 존재하지 않습니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account += tv4;
+                    aup4 = 0;
+                    qua4 = 0;
+                    pm4 = 0;
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매도 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void onClickHandler10(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("파산은행 매도 주문");
+        builder.setMessage("\n매도하시겠습니까?\n");
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(qua5==0){
+                    Toast.makeText(getApplicationContext(), "주문 가능 수량이 존재하지 않습니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    account += tv5;
+                    aup5 = 0;
+                    qua5 = 0;
+                    pm5 = 0;
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(300);
+                    Toast.makeText(getApplicationContext(), "매도 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
 }
