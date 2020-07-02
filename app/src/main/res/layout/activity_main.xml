@@ -112,7 +112,8 @@
                 android:padding="4pt"
                 android:text=""
                 android:textColor="#000000"
-                android:textSize="5pt" />
+                android:textSize="5pt"
+                android:onClick="onClickHandler1"/>
 
             <TextView
                 android:id="@+id/단절통신등락률"
@@ -347,6 +348,8 @@
         android:text="나의 예수금 : 20000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

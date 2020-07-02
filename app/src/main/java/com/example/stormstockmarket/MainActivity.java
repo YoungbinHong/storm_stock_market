@@ -1,11 +1,15 @@
 package com.example.stormstockmarket;
 
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     double flu1, flu2, flu3, flu4, flu5; // 등락률
 
     // 예수금 및 잔고
+    int account = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView 지진건설등락률 = (TextView) findViewById(R.id.지진건설등락률);
         final TextView 파산은행등락률 = (TextView) findViewById(R.id.파산은행등락률);
 
-        // 스레드 클래스
+        // 스레드 클래스 (이너클래스)
         class Runnable1 implements Runnable {
             @Override
             public void run() {
@@ -199,15 +204,38 @@ public class MainActivity extends AppCompatActivity {
         //스레드 실행
         t1.start() ;
 
-        //버튼
-        단절통신현재가.setOnClickListener(new View.OnClickListener(){
+    }
+
+    // 매수 주문
+    public void onClickHandler1(View view)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("단절통신 매수 주문");
+        builder.setMessage("\n현재 가격 : " + array1[0]+"\n\n주문 수량을 아래에 입력하세요.\n");
+
+        final EditText et = new EditText(MainActivity.this);
+        et.setText("");
+        et.setInputType(InputType.TYPE_CLASS_NUMBER);
+        builder.setView(et);
+
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Intent intent = new Intent(v.getContext(), PopupTouchActivity.class);
-                startActivity(intent);
+            public void onClick(DialogInterface dialog, int id) {
+                Toast.makeText(getApplicationContext(), "매수 주문이 완료되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int id)
+            {
+                Toast.makeText(getApplicationContext(), "주문이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
+
 
 }
