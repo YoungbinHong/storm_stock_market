@@ -2,11 +2,13 @@ package com.example.stormstockmarket;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -97,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
         final TextView 파산은행평가금액 = (TextView) findViewById(R.id.파산은행평가금액);
 
         final TextView 예수금 = (TextView) findViewById(R.id.예수금);
+
+        final Button 거래내역 = (Button) findViewById(R.id.거래내역);
 
         // 스레드1
         class Thread1 extends Thread {
@@ -861,6 +865,13 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    //버튼
+
+    public void buttonClickHandler(View view){
+        Intent intent = new Intent(getApplicationContext(),TransactionDetailActivity.class);
+        startActivity(intent);
     }
 
 }

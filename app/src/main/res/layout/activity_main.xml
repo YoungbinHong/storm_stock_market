@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -23,15 +23,16 @@
         </TableRow>
 
         <TableRow>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#555555"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text="주식전광판"
-                android:background="#555555"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"/>
+                android:textSize="5pt" />
         </TableRow>
 
         <TableRow
@@ -91,11 +92,11 @@
                 android:layout_weight="4"
                 android:background="#c08000"
                 android:gravity="center"
+                android:onClick="onClickHandler1"
                 android:padding="4pt"
                 android:text="단절통신"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler1" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/단절통신이전가"
@@ -145,11 +146,11 @@
                 android:layout_weight="4"
                 android:background="#504028"
                 android:gravity="center"
+                android:onClick="onClickHandler2"
                 android:padding="4pt"
                 android:text="사망생명"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler2" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/사망생명이전가"
@@ -196,11 +197,11 @@
                 android:layout_weight="4"
                 android:background="#003030"
                 android:gravity="center"
+                android:onClick="onClickHandler3"
                 android:padding="4pt"
                 android:text="석기전자"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler3" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/석기전자이전가"
@@ -247,11 +248,11 @@
                 android:layout_weight="4"
                 android:background="#308000"
                 android:gravity="center"
+                android:onClick="onClickHandler4"
                 android:padding="4pt"
                 android:text="지진건설"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler4" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/지진건설이전가"
@@ -298,11 +299,11 @@
                 android:layout_weight="4"
                 android:background="#c83000"
                 android:gravity="center"
+                android:onClick="onClickHandler5"
                 android:padding="4pt"
                 android:text="파산은행"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler5" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/파산은행이전가"
@@ -339,13 +340,14 @@
         </TableRow>
 
         <TableRow>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#555555"
                 android:gravity="center"
                 android:padding="4pt"
                 android:text="나의 잔고"
-                android:background="#555555"
                 android:textColor="#FFFFFF"
                 android:textSize="5pt" />
         </TableRow>
@@ -417,11 +419,11 @@
                 android:layout_weight="2"
                 android:background="#c08000"
                 android:gravity="center"
+                android:onClick="onClickHandler6"
                 android:padding="4pt"
                 android:text="단절통신"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler6" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/단절통신평균단가"
@@ -483,11 +485,11 @@
                 android:layout_weight="2"
                 android:background="#504028"
                 android:gravity="center"
+                android:onClick="onClickHandler7"
                 android:padding="4pt"
                 android:text="사망생명"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler7" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/사망생명평균단가"
@@ -545,11 +547,11 @@
                 android:layout_weight="2"
                 android:background="#003030"
                 android:gravity="center"
+                android:onClick="onClickHandler8"
                 android:padding="4pt"
                 android:text="석기전자"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler8" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/석기전자평균단가"
@@ -607,11 +609,11 @@
                 android:layout_weight="2"
                 android:background="#308000"
                 android:gravity="center"
+                android:onClick="onClickHandler9"
                 android:padding="4pt"
                 android:text="지진건설"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler9" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/지진건설평균단가"
@@ -669,11 +671,11 @@
                 android:layout_weight="2"
                 android:background="#c83000"
                 android:gravity="center"
+                android:onClick="onClickHandler10"
                 android:padding="4pt"
                 android:text="파산은행"
                 android:textColor="#FFFFFF"
-                android:textSize="5pt"
-                android:onClick="onClickHandler10" />
+                android:textSize="5pt" />
 
             <TextView
                 android:id="@+id/파산은행평균단가"
@@ -724,7 +726,7 @@
 
     <TextView
         android:id="@+id/예수금"
-        android:layout_width="160dp"
+        android:layout_width="133dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -735,6 +737,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/거래내역"
+        android:layout_width="114dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="16dp"
+        android:text="거래 내역"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
