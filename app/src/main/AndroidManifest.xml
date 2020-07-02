@@ -24,9 +24,16 @@
             </intent-filter>
         </activity>
 
+        <!-- help activity -->
+        <activity android:name=".Help1Activity"/>
+        <activity android:name=".Help2Activity"/>
+        <activity android:name=".Help3Activity"/>
+        <activity android:name=".Help4Activity"/>
+        <activity android:name=".Help5Activity"/>
+        <activity android:name=".Help6Activity"/>
+
         <!-- main activity -->
         <activity android:name=".MainActivity"/>
-        <!-- popup touch activity -->
 
     </application>
 

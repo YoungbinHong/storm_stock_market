@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     double flu1, flu2, flu3, flu4, flu5; // 등락률
 
     // 예수금 및 잔고
-    int account = 10000;                                                        // 예수금 (account)
+    int account = 500000;                                                       // 예수금 (account)
     int aup1 = 0; int aup2 = 0; int aup3 = 0; int aup4 = 0; int aup5 = 0;       // 평균단가 (average unit price)
     int qua1 = 0; int qua2 = 0; int qua3 = 0; int qua4 = 0; int qua5 = 0;       // 수량 (quantity)
     int pm1 = 0; int pm2 = 0; int pm3 = 0; int pm4 = 0; int pm5 = 0;            // 매입금액 (purchase amount)
@@ -429,6 +429,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // 화면의 기능을 중지시키는 과정
+        Toast.makeText(getApplicationContext(), "onStop() 호출됨", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 화면을 메모리에서 없애버른 과정
+        Toast.makeText(getApplicationContext(), "onDestroy() 호출됨", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // 화면에 보여주기 전에 준비를 끝냄
+        // 임시로 저장된 화면의 상태를 불러온다
+        Toast.makeText(getApplicationContext(), "onResume() 호출됨", Toast.LENGTH_LONG).show();
+    }
+
     // 매수 주문
     public void onClickHandler1(View view) {
 
@@ -617,7 +639,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickHandler5(View view) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("사망생명 매수 주문");
+        builder.setTitle("파산은행 매수 주문");
         builder.setMessage("\n현재 가격 : " + array5[0]+"\n\n주문 수량을 아래에 입력하세요.\n");
 
         final EditText editText = new EditText(MainActivity.this);
