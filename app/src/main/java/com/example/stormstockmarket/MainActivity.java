@@ -35,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
     double flu1, flu2, flu3, flu4, flu5; // 등락률
 
     // 예수금 및 잔고
-    int account = 0;
+    int account = 10000;                // 예수금 (account)
+    int aup1,aup2,aup3,aup4,aup5 = 0;   // 평균단가 (average unit price)
+    int qua1,qua2,qua3,qua4,qua5 = 0;   // 수량 (quantity)
+    int tv1,tv2,tv3,tv4,tv5 = 0;        // 평가금액 (total valuation)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +64,28 @@ public class MainActivity extends AppCompatActivity {
         final TextView 지진건설등락률 = (TextView) findViewById(R.id.지진건설등락률);
         final TextView 파산은행등락률 = (TextView) findViewById(R.id.파산은행등락률);
 
-        // 스레드 클래스 (이너클래스)
-        class Runnable1 implements Runnable {
+        final TextView 단절통신평균단가 = (TextView) findViewById(R.id.단절통신평균단가);
+        final TextView 사망생명평균단가 = (TextView) findViewById(R.id.사망생명평균단가);
+        final TextView 석기전자평균단가 = (TextView) findViewById(R.id.석기전자평균단가);
+        final TextView 지진건설평균단가 = (TextView) findViewById(R.id.지진건설평균단가);
+        final TextView 파산은행평균단가 = (TextView) findViewById(R.id.파산은행평균단가);
+
+        final TextView 단절통신수량 = (TextView) findViewById(R.id.단절통신수량);
+        final TextView 사망생명수량 = (TextView) findViewById(R.id.사망생명수량);
+        final TextView 석기전자수량 = (TextView) findViewById(R.id.석기전자수량);
+        final TextView 지진건설수량 = (TextView) findViewById(R.id.지진건설수량);
+        final TextView 파산은행수량 = (TextView) findViewById(R.id.파산은행수량);
+
+        final TextView 단절통신평가금액 = (TextView) findViewById(R.id.단절통신평가금액);
+        final TextView 사망생명평가금액 = (TextView) findViewById(R.id.사망생명평가금액);
+        final TextView 석기전자평가금액 = (TextView) findViewById(R.id.석기전자평가금액);
+        final TextView 지진건설평가금액 = (TextView) findViewById(R.id.지진건설평가금액);
+        final TextView 파산은행평가금액 = (TextView) findViewById(R.id.파산은행평가금액);
+
+        final TextView 예수금 = (TextView) findViewById(R.id.예수금);
+
+        // 스레드1
+        class Thread1 extends Thread {
             @Override
             public void run() {
 
@@ -188,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     try {
-                        Thread.sleep(3000) ;
+                        Thread.sleep(10000) ;
                     } catch (Exception e) {
                         e.printStackTrace() ;
                     }
@@ -197,18 +220,71 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        // 스레드 1 생성
-        Runnable1 thread1 = new Runnable1() ;
-        Thread t1 = new Thread(thread1) ;
+        class Thread2 extends Thread{
+            @Override
+            public void run(){
+                while(true){
 
-        //스레드 실행
-        t1.start() ;
+                    단절통신평균단가.setText(aup1+"");
+                    사망생명평균단가.setText(aup2+"");
+                    석기전자평균단가.setText(aup3+"");
+                    지진건설평균단가.setText(aup4+"");
+                    파산은행평균단가.setText(aup5+"");
+
+                    단절통신수량.setText(qua1+"");
+                    사망생명수량.setText(qua2+"");
+                    석기전자수량.setText(qua3+"");
+                    지진건설수량.setText(qua4+"");
+                    파산은행수량.setText(qua5+"");
+
+                    단절통신평가금액.setText(tv1+"");
+                    사망생명평가금액.setText(tv2+"");
+                    석기전자평가금액.setText(tv3+"");
+                    지진건설평가금액.setText(tv4+"");
+                    파산은행평가금액.setText(tv5+"");
+
+                    try {
+                        Thread.sleep(10);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+        }
+
+        // 스레드3
+        class Thread3 extends Thread {
+            @Override
+            public void run(){
+                while (true){
+                    예수금.setText("나의 예수금 : "+account+"");
+                    try {
+                        Thread.sleep(10);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        // 스레드 1 생성 및 실행
+        Thread thread1 = new Thread1();
+        thread1.start();
+
+        // 스레드 2 생성 및 실행
+        Thread thread2 = new Thread2();
+        thread2.start();
+
+        // 스레드 3 생성 및 실행
+        Thread thread3 = new Thread3();
+        thread3.start();
 
     }
 
     // 매수 주문
-    public void onClickHandler1(View view)
-    {
+    public void onClickHandler1(View view) {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("단절통신 매수 주문");
         builder.setMessage("\n현재 가격 : " + array1[0]+"\n\n주문 수량을 아래에 입력하세요.\n");
