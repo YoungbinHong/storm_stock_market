@@ -17,16 +17,21 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     // 가격용 배열
-    int array1[] = {0,0};
-    int array2[] = {0,0};
-    int array3[] = {0,0};
-    int array4[] = {0,0};
-    int array5[] = {0,0};
+    int array1[] = {1000,0};
+    int array2[] = {3000,0};
+    int array3[] = {2000,0};
+    int array4[] = {1500,0};
+    int array5[] = {2500,0};
 
     // 가격 진행 함수
-    void push(int [] array, int nextValue){
+    void add(int [] array, int nextValue){
         array[1] = array[0];
-        array[0] = nextValue;
+        array[0] += nextValue;
+    }
+
+    void subtract(int [] array, int nextValue){
+        array[1] = array[0];
+        array[0] -= nextValue;
     }
 
     // 등락률용 함수 및 변수
@@ -101,21 +106,91 @@ public class MainActivity extends AppCompatActivity {
                 while (true) {
 
                     double randomDouble1 = Math.random();
-                    int randomInt1 = (int)(randomDouble1*100)+1;
-                    double randomDouble2 = Math.random();
-                    int randomInt2 = (int)(randomDouble2*100)+1;
-                    double randomDouble3 = Math.random();
-                    int randomInt3 = (int)(randomDouble3*100)+1;
-                    double randomDouble4 = Math.random();
-                    int randomInt4 = (int)(randomDouble4*100)+1;
-                    double randomDouble5 = Math.random();
-                    int randomInt5 = (int)(randomDouble5*100)+1;
+                    int randomInt1 = (int)(randomDouble1*100);
+                    randomInt1 = (randomInt1 / 10) * 10;
 
-                    push(array1,randomInt1);
-                    push(array2,randomInt2);
-                    push(array3,randomInt3);
-                    push(array4,randomInt4);
-                    push(array5,randomInt5);
+                    double randomDouble2 = Math.random();
+                    int randomInt2 = (int)(randomDouble2*100);
+                    randomInt2 = (randomInt2 / 10) * 10;
+
+                    double randomDouble3 = Math.random();
+                    int randomInt3 = (int)(randomDouble3*100);
+                    randomInt3 = (randomInt3 / 10) * 10;
+
+                    double randomDouble4 = Math.random();
+                    int randomInt4 = (int)(randomDouble4*100);
+                    randomInt4 = (randomInt4 / 10) * 10;
+
+                    double randomDouble5 = Math.random();
+                    int randomInt5 = (int)(randomDouble5*100);
+                    randomInt5 = (randomInt5 / 10) * 10;
+
+                    double randomSign1 = Math.random();
+                    double randomSign2 = Math.random();
+                    double randomSign3 = Math.random();
+                    double randomSign4 = Math.random();
+                    double randomSign5 = Math.random();
+
+                    if(array1[0]>100){
+                        if(randomSign1<0.5){
+                            add(array1,randomInt1);
+                        }
+                        else{
+                            subtract(array1,randomInt1);
+                        }
+                    }
+                    else{
+                        add(array1,randomInt1);
+                    }
+
+                    if(array2[0]>100){
+                        if(randomSign2<0.5){
+                            add(array2,randomInt2);
+                        }
+                        else{
+                            subtract(array2,randomInt2);
+                        }
+                    }
+                    else{
+                        add(array2,randomInt2);
+                    }
+
+
+                    if(array3[0]>100){
+                        if(randomSign3<0.5){
+                            add(array3,randomInt3);
+                        }
+                        else{
+                            subtract(array3,randomInt3);
+                        }
+                    }
+                    else{
+                        add(array3,randomInt3);
+                    }
+
+                    if(array4[0]>100){
+                        if(randomSign4<0.5){
+                            add(array4,randomInt4);
+                        }
+                        else{
+                            subtract(array4,randomInt4);
+                        }
+                    }
+                    else{
+                        add(array4,randomInt4);
+                    }
+
+                    if(array5[0]>100){
+                        if(randomSign5<0.5){
+                            add(array5,randomInt5);
+                        }
+                        else{
+                            subtract(array5,randomInt5);
+                        }
+                    }
+                    else{
+                        add(array5,randomInt5);
+                    }
 
                     단절통신현재가.setText(array1[0]+"");
                     사망생명현재가.setText(array2[0]+"");
