@@ -1,3 +1,15 @@
 # StormStockMarket
 
-주식 모의 게임을 할 수 있는 안드로이드 전용 어플리케이션입니다.
+### Why is this project created?
+To make final project in Open Source Software and Experiments class in HUFS ICE.
+
+### What is the purpose of this project?
+It's an Android-only application that allows you to play virtual stock market games.
+
+### Contributor
+Youngbin Hong
+
+### Supervisor Professor
+Sangwon Park (http://dislab.hufs.ac.kr/lab/Main_Page)
+
+- - -
